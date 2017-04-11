@@ -1,0 +1,23 @@
+{
+  "name": "tryws",
+  "version": "1.0.0",
+  "description": "tryws",
+  "main": "express.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cbinbin/tryws.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cbinbin/tryws/issues"
+  },
+  "homepage": "https://github.com/Cbinbin/tryws#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "ws": "^2.2.3"
+  }
+}
