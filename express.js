@@ -12,22 +12,9 @@ var server = https.createServer(
 var  url = require('url');
 var  WebSocketServer = require('ws').Server;
 var  wss = new WebSocketServer({
-        server: server,
-        verifyClient: socketVerify
+        server: server
       });
 
-function socketVerify (info) {
-    console.log(info.origin)
-    // console.log(info.req)
-    console.log(info.secure)
-    if (info.origin.indexOf('weixin')) {
-        // console.log(info.req.headers['user-agent'])
-        global.isWeixin = true
-    } else {
-        global.isWeixin = false
-    }
-    return true
-}
 var express = require('express');
 var app = express();
 var port = 8080;
