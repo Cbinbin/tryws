@@ -17,7 +17,7 @@ var  wss = new WebSocketServer({
 
 var express = require('express');
 var app = express();
-var port = 8090;
+var port = 8080;
 
 app.use(function(req, res) {
     res.send({
