@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>try</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <button onClick="connecte()">连接</button>
+    <script>
+      var socket = new WebSocket('wss://localhost:8090');
+
+      socket.onmessage = function (e) {
+        console.log('Server: ' + e.data);
+      }
+      function connecte() {
+        socket.send('your message');
+      }
+    </script>
+  </body>
+</html>
