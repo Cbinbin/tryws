@@ -5,8 +5,8 @@ var https = require('https');
 
 var server = https.createServer(
     {
-      'key':fs.readFileSync('ssl.key'),
-      'cert':fs.readFileSync('ssl.crt')
+      'key':fs.readFileSync('cbinbin.key'),
+      'cert':fs.readFileSync('cbinbin.crt')
     }
   );
 var  url = require('url');
