@@ -7,7 +7,7 @@
   <body>
     <button onClick="connecte()">连接</button>
     <script>
-      var socket = new WebSocket('wss://www.cbinbin.com');
+      var socket = new WebSocket('wss://119.29.105.85:8080');
 
       socket.onmessage = function (e) {
         console.log('Server: ' + e.data);

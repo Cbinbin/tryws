@@ -5,8 +5,8 @@ var https = require('https');
 
 var server = https.createServer(
     {
-      'key':fs.readFileSync('cbinbin.key'),
-      'cert':fs.readFileSync('cbinbin.crt')
+      'key':fs.readFileSync('ssl.key'),
+      'cert':fs.readFileSync('ssl.crt')
     }
   );
 var  url = require('url');
@@ -36,7 +36,7 @@ wss.on('connection', function connection(ws) {
     ws.send('something');
 });
 
-server.on('request', app);
+server.on('mount', app);
 server.listen(port, function() {
     console.log('Listening on ' + server.address().port)
 });
