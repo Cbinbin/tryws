@@ -10,7 +10,10 @@ app.use(function (req, res) {
 });
  
 const server = http.createServer(app);
-const wss = new WebSocket.Server({ server });
+const wss = new WebSocket.Server({ 
+  clientTracking: true,
+  server: server
+});
 
 wss.on('connection', (ws)=> {
   const location = url.parse(ws.upgradeReq.url, true);
@@ -18,9 +21,7 @@ wss.on('connection', (ws)=> {
   // or ws.upgradeReq.headers.cookie (see http://stackoverflow.com/a/16395220/151312) 
   ws.on('message', (data)=> {
     wss.clients.forEach((client)=> {
-      if (client.readyState === WebSocket.OPEN) {    //client !== ws && 
-        client.send(data);
-      } else console.log('Client:' + data)
+      client.send(data);
     });
   });
  
