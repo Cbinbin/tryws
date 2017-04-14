@@ -5,15 +5,17 @@
     <meta charset="utf-8">
   </head>
   <body>
-    <button onClick="connecte()">连接</button>
+    <input type= "text" id= "input" ><button onClick="connecte()">连接</button>
     <script>
-      var socket = new WebSocket('ws://www.cbinbin.com/');
+      var socket = new WebSocket('ws://localhost:8090/');    //www.cbinbin.com
 
       socket.onmessage = function (e) {
         console.log('Server: ' + e.data);
       }
       function connecte() {
-        socket.send('your message');
+        var input = document.getElementById('input');
+        socket.send(input.value);
+        input.value = '';
       }
     </script>
   </body>
